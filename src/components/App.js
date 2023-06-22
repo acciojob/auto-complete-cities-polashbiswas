@@ -2,38 +2,39 @@
 import React, { useEffect, useState } from "react";
 import './../styles/App.css';
 
-let cities = [
-  "Mumbai",
-  "Delhi",
-  "Bangalore",
-  "Chennai",
-  "Kolkata",
-  "Hyderabad",
-  "Jaipur",
-  "Ahmedabad",
-  "Pune",
-  "Surat",
-  "Lucknow",
-  "Kanpur",
-  "Nagpur",
-  "Indore",
-  "Thane",
-  "Bhopal",
-  "Visakhapatnam",
-  "Patna",
-  "Vadodara",
-  "Ludhiana"
-]
+
 
 const App = () => {
+  let suggestions = [
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Chennai",
+    "Kolkata",
+    "Hyderabad",
+    "Jaipur",
+    "Ahmedabad",
+    "Pune",
+    "Surat",
+    "Lucknow",
+    "Kanpur",
+    "Nagpur",
+    "Indore",
+    "Thane",
+    "Bhopal",
+    "Visakhapatnam",
+    "Patna",
+    "Vadodara",
+    "Ludhiana"
+  ];
   let [inputData, setInputData] = useState("");
   let [search, setsearch] = useState("");
 
   useEffect(() => {
-    setsearch(cities.filter((city) => city.toLowerCase().includes(inputData.toLowerCase())));
+    setsearch(suggestions.filter((city) => city.toLowerCase().includes(inputData.toLowerCase())));
 
   }, [inputData])
-  // let suggestions = cities.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
+  // let suggestions = suggestions.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
 
   function handelCity(value) {
     setInputData(value);
@@ -55,7 +56,7 @@ const App = () => {
           <div className="city-container">
             {
               search.map((value, index) => (
-                <p key={index} onClick={() => handelCity(value)}>{value},{''}</p>
+                <li key={index} onClick={() => handelCity(value)}>{value},{''}</li>
               ))
             }
           </div>
