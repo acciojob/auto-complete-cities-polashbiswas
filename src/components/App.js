@@ -36,8 +36,8 @@ const App = () => {
   }, [inputData])
   // let suggestions = suggestions.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
 
-  function handelCity(value) {
-    setInputData(value);
+  function handelCity(suggestion) {
+    setInputData(suggestion);
   }
 
 
@@ -55,8 +55,8 @@ const App = () => {
         (
           <div className="city-container">
             {
-              search.map((value, index) => (
-                <li key={index} onClick={() => handelCity(value)}>{value},{''}</li>
+              search.map((suggestion, index) => (
+                <li key={index} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
               ))
             }
           </div>
