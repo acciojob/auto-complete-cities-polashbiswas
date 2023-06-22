@@ -1,1 +1,19 @@
-
+body{
+    display: flex;
+    justify-content: center;
+}
+.city-container{
+    border: 1px solid #000000;
+    max-height: 300px;
+    overflow: scroll;
+}
+.city-container p{
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+.searchBar{
+    width: 278px;
+    height: 2rem;
+}
