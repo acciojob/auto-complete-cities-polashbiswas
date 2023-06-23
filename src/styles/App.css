@@ -1,24 +1,48 @@
-body{
+body {
     display: flex;
     justify-content: center;
 }
-.city-container{
+
+/* .city-container{
     border: 1px solid #000000;
     max-height: 300px;
     overflow: scroll;
-}
-.city-container li{
+} */
+/* .city-container li{
     border-bottom: 1px solid black;
     margin: 0;
     padding: 1rem;
     cursor: pointer;
     list-style-type: none;
-}
-.searchBar{
+} */
+.searchBar {
     width: 278px;
     height: 2rem;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 0;
+}
+
+.suggestions-list {
+    position: relative;
+}
+
+.city-container {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 1;
+}
+
+.city-container li {
+    padding: 5px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.city-container li:hover {
+    background-color: #f1f1f1;
 }
