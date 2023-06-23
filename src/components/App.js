@@ -28,10 +28,11 @@ const App = () => {
     "Ludhiana"
   ];
   let [inputData, setInputData] = useState("");
-  let [search, setsearch] = useState("");
+  //let [search, setsearch] = useState("");
+  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 
   useEffect(() => {
-    setsearch(suggestions.filter((city) => city.toLowerCase().includes(inputData.toLowerCase())));
+    setFilteredSuggestions(suggestions.filter((city) => city.toLowerCase().includes(inputData.toLowerCase())));
 
   }, [inputData])
   // let suggestions = suggestions.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
@@ -51,12 +52,12 @@ const App = () => {
         className="searchBar"
       />
       {
-        inputData !== "" && search.length > 0 &&
+        inputData !== "" && filteredSuggestions.length > 0 &&
         (
           <div className="city-container">
             {
-              search.map((suggestion, index) => (
-                <li key={index} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
+              filteredSuggestions.map((suggestion) => (
+                <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
               ))
             }
           </div>
