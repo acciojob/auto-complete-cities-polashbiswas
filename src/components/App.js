@@ -32,14 +32,14 @@ const App = () => {
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 
   useEffect(() => {
-    setFilteredSuggestions(suggestions.filter((city) => city.toLowerCase().includes(inputData.toLowerCase())));
+    setFilteredSuggestions(suggestions.filter((suggestion) => suggestion.toLowerCase().includes(inputData.toLowerCase())));
 
-  }, [inputData])
+  }, [inputData, suggestions])
   // let suggestions = suggestions.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
 
-  function handelCity(suggestion) {
-    setInputData(suggestion);
-  }
+  // function handelCity(suggestion) {
+  //   setInputData(suggestion);
+  // }
 
 
   return (
@@ -64,7 +64,7 @@ const App = () => {
         //   </div>
         // )
           filteredSuggestions.map((suggestion) => (
-            <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
+            <li key={suggestion}>{suggestion}</li>
           ))
       }
       </ul>
