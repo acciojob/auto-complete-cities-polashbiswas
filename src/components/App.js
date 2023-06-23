@@ -51,6 +51,7 @@ const App = () => {
         value={inputData}
         className="searchBar"
       />
+      <ul>
       {
         inputData !== "" && filteredSuggestions.length > 0 &&
         (
@@ -63,6 +64,7 @@ const App = () => {
           </div>
         )
       }
+      </ul>
     </div>
   )
 }
