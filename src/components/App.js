@@ -28,18 +28,16 @@ const App = () => {
     "Ludhiana"
   ];
   let [inputData, setInputData] = useState("");
-  //let [search, setsearch] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 
   useEffect(() => {
     setFilteredSuggestions(suggestions.filter((suggestion) => suggestion.toLowerCase().includes(inputData.toLowerCase())));
 
-  }, [inputData, suggestions])
-  // let suggestions = suggestions.filter((city)=> city.toLowerCase().includes(inputData.toLowerCase()));
+  }, [inputData])
 
-  // function handelCity(suggestion) {
-  //   setInputData(suggestion);
-  // }
+  function handelCity(suggestion) {
+    setInputData(suggestion);
+  }
 
 
   return (
@@ -53,19 +51,16 @@ const App = () => {
       />
       <ul>
       {
-        // inputData !== "" && filteredSuggestions.length > 0 &&
-        // (
-        //   <div className="city-container">
-        //     {
-        //       filteredSuggestions.map((suggestion) => (
-        //         <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
-        //       ))
-        //     }
-        //   </div>
-        // )
-          filteredSuggestions.map((suggestion) => (
-            <li key={suggestion}>{suggestion}</li>
-          ))
+        inputData !== "" && filteredSuggestions.length > 0 &&
+        (
+          <div className="city-container">
+            {
+              filteredSuggestions.map((suggestion) => (
+                <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
+              ))
+            }
+          </div>
+        )
       }
       </ul>
     </div>

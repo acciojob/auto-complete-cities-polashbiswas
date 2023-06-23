@@ -15,6 +15,10 @@ body{
     list-style-type: none;
 }
 .searchBar{
-    width: 300px;
+    width: 278px;
     height: 2rem;
+}
+ul{
+    margin: 0;
+    padding: 0;
 }
