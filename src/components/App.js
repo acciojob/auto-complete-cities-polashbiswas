@@ -53,16 +53,19 @@ const App = () => {
       />
       <ul>
       {
-        inputData !== "" && filteredSuggestions.length > 0 &&
-        (
-          <div className="city-container">
-            {
-              filteredSuggestions.map((suggestion) => (
-                <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
-              ))
-            }
-          </div>
-        )
+        // inputData !== "" && filteredSuggestions.length > 0 &&
+        // (
+        //   <div className="city-container">
+        //     {
+        //       filteredSuggestions.map((suggestion) => (
+        //         <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
+        //       ))
+        //     }
+        //   </div>
+        // )
+          filteredSuggestions.map((suggestion) => (
+            <li key={suggestion} onClick={() => handelCity(suggestion)}>{suggestion}{''}</li>
+          ))
       }
       </ul>
     </div>
